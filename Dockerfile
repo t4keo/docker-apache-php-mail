@@ -4,9 +4,6 @@ MAINTAINER Cedric ESSLINGER <cedric.esslinger@viacesi.fr>
 # Install apache2 and php5
 RUN apt-get update && apt-get install -y apache2 php5 exim4 && apt-get clean
 
-# Link for the storage
-RUN rm rf /var/www/html && ln -s /home/html /var/www
-
 # Delete the files that we are gonna replace
 RUN rm -rf /etc/exim4/update-exim4.conf.conf && rm -rf /etc/mailname
 
